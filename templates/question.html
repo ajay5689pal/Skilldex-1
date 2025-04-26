@@ -1,0 +1,45 @@
+<!-- templates/question.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aptitude Game</title>
+    <style>
+        .timer { position: fixed; top: 10px; right: 10px; }
+        .question-container { margin: 20px; padding: 20px; border: 1px solid #ccc; }
+        .options { margin-top: 15px; }
+        .option-btn { margin: 5px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <div class="timer">Time Left: <span id="time">{{ time_left }}</span>s</div>
+    <div class="question-container">
+        <h3>Question {{ question_number }} of {{ total_questions }}</h3>
+        <p>{{ question.question }}</p>
+        <div class="options">
+            <form action="/answer" method="post">
+                {% for option in question.options %}
+                <button type="submit" name="answer" value="{{ option }}" class="option-btn">
+                    {{ option }}
+                </button>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Timer countdown
+        let timeLeft = {{ time_left }};
+        const timerElement = document.getElementById('time');
+        
+        const timer = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            
+            if(timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = "/results";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

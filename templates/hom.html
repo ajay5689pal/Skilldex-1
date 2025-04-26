@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SkillDex | Home</title>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+<link href = "static\hom.css" rel = "stylesheet"></head>
+<body>
+<!-- Background & animion & navbar & title -->
+  <div class="container-fluid">
+<!-- Background animtion-->
+    <div class="background">
+       <div class="cube"></div>
+       <div class="cube"></div>
+       <div class="cube"></div>
+       <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+<!-- header -->
+   <header>
+<!-- navbar -->
+     <nav>
+        <ul>
+            <li><img src = "static\images\logo.png" style="height: 210px;width: 300px;margin-top: -70px;margin-left: -650px;"></li>
+           <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('learn')}}">Learn</a></li>
+            <li><a href="{{url_for('practice_sub_name')}}">Compete</a></li>
+            <li><a href="{{url_for('track')}}">Track</a></li>
+            <li><a href="{{url_for('account')}}">Account</a></li>
+         </ul>
+       </nav>
+<!-- logo -->
+      <div class="logo"><span>N</span></div>
+<!-- title & content -->
+      <section class="header-content">
+         <h1>Welcome</h1>
+        <p style="font-size: 20px;"> Welcome to our Page. We are a passionated group of people,<br>
+           who aimed to make learning Fun.<span style="font-weight: 700px;font-size: 30px;"> Think Fast! Upskill ! Solve Smart! SKILLDEX</span></p>
+        <button><a href="" style="text-decoration: none;">Know more</a></button>
+        <button><a href="" style="text-decoration: none;">Meet us</a></button>
+      </section>
+  </header>
+  </div>
+</body>
+</html>

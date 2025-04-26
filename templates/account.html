@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        College Connect| Account
+    </title>
+    <link href="static\account.css" rel="stylesheet">
+</head>
+<body>
+   <article id="main_border">
+    <a href = "{{url_for('home')}}"><center><img src = "static\images\logo.png" id=" logo"></center></a>
+    <div id="sepration">
+    <img src = "static\images\acc.png" style="border-radius: 100%;height: 100px;margin-top: 40px;margin-left: 40px;border: 2px solid #0000ffba;"> <h1>Hey , {{current_user.Name}}</h1>
+    <h2 id = "abt"> About </h2>
+    <h2 id="abt2">I'm {{current_user.Year}}st year student , currently persuing {{current_user.Course}}.</h2>
+   </div>
+   <span>Email : {{current_user.Email}}</span>
+   <p>
+    <a href="{{url_for('logout')}}">Logout</a>
+    </p>
+   </article>
+</body>
+</html>
